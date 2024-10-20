@@ -1,0 +1,675 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+  position: relative;
+  height: 100px;
+  z-index: 1;
+}
+
+.logo {
+  color: white;
+  font-size: 23px;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color:goldenrod;
+}
+
+/* Burger menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.burger:hover
+{
+  background-color:rgba(0, 0, 0, 0.2) ;
+  border-radius: 30px;
+}
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px;
+  transition: all 0.8s ease;
+}
+
+/* Animation for links on small screens */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Responsive design for mobile screens */
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      background-color: rgb(0, 0, 0, 0.9);
+      top: 60px;
+      right: 0;
+      width: 40%;
+      height: 300vh;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .nav-links.active {
+      display: flex;
+      height: 900px;
+      margin-top: 40px;
+      max-width: 50%;
+      background-color: rgba(0, 0, 0, 0.8);
+      animation: fadeIn 0.5s ease forwards;
+  }
+
+  .nav-links li {
+      margin: 20px 0;
+  }
+
+  .burger {
+      display: flex;
+  }
+
+  /* Burger menu transition for animation */
+  .burger.toggle .line:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .burger.toggle .line:nth-child(2) {
+      opacity: 0;
+  }
+
+  .burger.toggle .line:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+
+
+
+/* Hero Section Styling */
+.hero {
+  height: 100vh; /* Full height of the viewport */
+  background: url('room\ 1.jpg') center/cover no-repeat; /* Add your image path here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for text */
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #f9a825; /* Hotel color style */
+}
+
+/* Rooms Section */
+.rooms-section {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.rooms-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.room-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.room-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.room-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Room Image */
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: filter 0.3s ease;
+}
+
+.room-card:hover img {
+  filter: brightness(0.8); /* Darkens the image on hover */
+}
+
+/* Room Info */
+.room-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.room-info h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.room-info p {
+  color: #666;
+}
+
+/* Responsive Menu (small screens) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+}
+
+/* Section Styling */
+.section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.section:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+.section:nth-child(even) {
+  background-color: #ddd;
+}
+
+
+
+
+
+/* Menu Section */
+.menu-section {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.menu-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto; /* Center the carousel */
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%; /* Each item takes full width */
+  transition: opacity 0.5s ease;
+  opacity: 0; /* Hide all items by default */
+}
+
+.carousel-item.active {
+  opacity: 1; /* Show the active item */
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 500px; /* Set a fixed height for images */
+  object-fit: cover; /* Cover the entire area */
+}
+
+/* Carousel Controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu-section h2 {
+    font-size: 2rem; /* Adjust heading size on mobile */
+  }
+
+  .carousel-item img {
+    height: 200px; /* Adjust image height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-section h2 {
+    font-size: 1.5rem; /* Adjust heading size for very small screens */
+  }
+
+  .carousel-item img {
+    height: 150px; /* Adjust image height for very small screens */
+  }
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.services-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap in smaller screens */
+}
+
+.service-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px; /* Set card width */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-card i {
+  font-size: 3rem; /* Icon size */
+  color: #f9a825; /* Icon color */
+  margin-bottom: 15px; /* Space between icon and text */
+}
+
+/* Service Info */
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.service-card p {
+  color: #666;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .service-card {
+    width: 150px; /* Smaller width for mobile */
+  }
+
+  .services-section h2 {
+    font-size: 2rem; /* Adjust heading size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    width: 100%; /* Full width on very small screens */
+    margin: 10px 0; /* Space between cards */
+  }
+}
+
+
+/* Email Us Section */
+.email-section {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.email-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.email-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.email-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+}
+
+.email-form input {
+  padding: 10px;
+  width: 300px; /* Default input width */
+  border: 2px solid #f9a825;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  animation: bounce 1s infinite; /* Bounce animation */
+}
+
+.email-form input:focus {
+  border-color: #333; /* Change border color on focus */
+}
+
+.email-form button {
+  padding: 10px 20px;
+  background-color: #f9a825;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative; /* For the hover effect */
+}
+
+.email-form button:hover {
+  background-color: #333; /* Change background color on hover */
+}
+
+/* Keyframe Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); /* Bounce effect */
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .email-form input {
+    width: 220px; /* Smaller input width for mobile */
+  }
+
+  .email-section h2 {
+    font-size: 2rem; /* Adjust heading size on mobile */
+  }
+
+  .email-section p {
+    font-size: 1rem; /* Adjust paragraph size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .email-form input {
+    width: 100%; /* Full width on very small screens */
+  }
+}
+
+
+
+
+/* Discount Section */
+.discount-section {
+  padding: 80px 0;
+  
+  text-align: center;
+  background-color:black; /* Background color */
+  color: white; /* Text color */
+  position: relative;
+  overflow: hidden; /* Prevents overflow of child elements */
+}
+
+.discount-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.discount-section p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Discount Button */
+.discount-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #f9a825; /* Button text color */
+  background-color: white; /* Button background color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  animation: pulse 1.5s infinite; /* Pulse animation */
+}
+
+.discount-button:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  background-color: #333; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* Keyframe Animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Pulse effect */
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .discount-section h2 {
+    font-size: 2.5rem; /* Adjust heading size on mobile */
+  }
+
+  .discount-section p {
+    font-size: 1.2rem; /* Adjust paragraph size on mobile */
+  }
+
+  .discount-button {
+    padding: 12px 25px; /* Smaller button size for mobile */
+    font-size: 1rem; /* Adjust button font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .discount-section h2 {
+    font-size: 2rem; /* Adjust heading size for very small screens */
+  }
+
+  .discount-section p {
+    font-size: 1rem; /* Adjust paragraph size for very small screens */
+  }
+
+  .discount-button {
+    padding: 10px 20px; /* Smaller button size for very small screens */
+  }
+}
+
+
+/* Footer Section */
+.footer-section {
+  background-color: #333; /* Dark background */
+  color: white; /* White text */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px; /* Limit the max width */
+  margin: 0 auto; /* Center the content */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Space out sections */
+}
+
+.footer-links, .footer-address, .footer-contact {
+  flex: 1; /* Flexbox to allow equal spacing */
+  margin: 10px; /* Margin between sections */
+}
+
+.footer-links h3, .footer-address h3, .footer-contact h3 {
+  margin-bottom: 10px; /* Space below headings */
+}
+
+.social-media a {
+  margin: 0 10px; /* Space between icons */
+  color: white; /* White icons */
+  font-size: 1.5rem; /* Icon size */
+  transition: color 0.3s; /* Transition effect */
+}
+
+.social-media a:hover {
+  color: #f9a825; /* Change color on hover */
+}
+
+.address {
+  position: relative; /* Position for hover effect */
+  cursor: pointer; /* Pointer cursor for hover effect */
+}
+
+.address:hover {
+  color: #f9a825; /* Change color on hover */
+  text-shadow: 0 0 5px rgba(249, 168, 37, 0.8); /* Shadow effect */
+}
+
+/* Contact Form */
+.footer-contact form {
+  display: flex;
+  flex-direction: column; /* Stack inputs */
+  gap: 10px; /* Space between inputs */
+}
+
+.footer-contact input, .footer-contact textarea {
+  padding: 10px;
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+}
+
+.footer-contact textarea {
+  height: 100px; /* Fixed height for the textarea */
+}
+
+.footer-contact button {
+  padding: 10px;
+  background-color: #f9a825; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Transition effect */
+}
+
+.footer-contact button:hover {
+  background-color: #333; /* Darken button on hover */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack sections on mobile */
+    align-items: center; /* Center content */
+  }
+
+  .footer-links, .footer-address, .footer-contact {
+    width: 100%; /* Full width for each section */
+    margin: 10px 0; /* Space between stacked sections */
+  }
+}
